@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Страница 2 | Тест Altcraft</title>
+    <!-- Те же стили, что и в index.html -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+            background-color: #f5f5f5;
+        }
+        h1 {
+            color: #333;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px;
+            background: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+  <!-- START OF ALTCRAFT PIXEL CODE !-->
+      <script type="text/javascript">
+      !function(){var e={url:"https://pxl-ivan-markin.qa.altcraft.com/pixel?k=XXLbebzDV7hrsG0Naw1DYI2zTvyYS6k7KblZiMybwB66ReXFFDbwIA%3D%3D&s=qpH7UKN%2BkZA%3D",goals:"pageView",value:parseFloat("0"),timeout:parseInt("0"),after_scroll:JSON.parse("false"),auto_load:JSON.parse("true")},o=function(o,t,n,a){var d=[].concat(o).map(function(e){return encodeURIComponent(e)}).join(","),c=encodeURIComponent(String(t||0)),i=encodeURIComponent(n.matching_mode||""),r=encodeURIComponent(n.db_id||0),u=encodeURIComponent(JSON.stringify(n.match||{})),l=encodeURIComponent(JSON.stringify(n.update||{}));setTimeout(function(){(new Image).src=[e.url,"goals="+d,"value="+c,"db_id="+r,"mmode="+i,"match="+u,"update="+l].join("&")},a)},t=!1,n=function(){t||(t=!0,e.after_scroll?document.addEventListener("scroll",function(){(window.pageYOffset||document.documentElement.scrollTop>0)&&o(e.goals,e.value,{},e.timeout)},{once: true}):e.auto_load&&o(e.goals,e.value,{},e.timeout))};"complete"===document.readyState||"interactive"===document.readyState?n():window.addEventListener("load",n);window.ak_pixel_push=function(e,t,n,a,d,c){var i=[];Array.isArray(e)?i=e:i[0]=e,o(i,t,{match:n,update:a,matching_mode:d,db_id:c},0)}}();
+      </script>
+  <!-- END OF ALTCRAFT PIXEL CODE !-->
+    <div class="container">
+        <h1>Вторая тестовая страница</h1>
+        <p>Это page2.html с уникальным пикселем</p>
+        
+        <a href="index.html" class="btn">Вернуться на главную</a>
+        
+        <button class="btn" onclick="ak_pixel_push('page2_button_click', 1)">
+            Отправить событие
+        </button>
+    </div>
+</body>
+</html>
