@@ -5,36 +5,53 @@
     (function (window, document, dataLayerName, containerID) {
         window[dataLayerName] = window[dataLayerName] || [];
         window[dataLayerName].push({ 'start': new Date().getTime(), event: 'actm-js' });
+        var firstScript = document.getElementsByTagName('script')[0];
         var script = document.createElement('script');
-        script.src = 'https://pxl-ivan-markin.qa.altcraft.com/actm/js/actm.js?id=' + containerID;
+        var dl = dataLayerName !== 'acDataLayer' ? '&l=' + dataLayerName : '';
         script.async = true;
-        document.head.appendChild(script);
+        script.src = 'https://pxl-ivan-markin.qa.altcraft.com/actm/js/actm.js?id=' + containerID + dl;
+        script.type = 'module';
+        if (firstScript && firstScript.parentNode) {
+            firstScript.parentNode.insertBefore(script, firstScript);
+        }
     }(window, document, 'acDataLayer', 'ATM-AVA8V1SjMMfbPxfLZ'));
-    </script>
-    
-    <script>
-    // Инициализация dataLayer
-    window.acDataLayer = window.acDataLayer || [];
-    </script>
-    
+</script>
     <title>Тест Altcraft - Страница 1</title>
     <style>
-        /* Ваши стили */
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .btn {
+            padding: 10px 20px;
+            margin: 10px;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <button id="btn_1">Кнопка 1</button>
+        <h1>Страница 1</h1>
+        <p>Тестирование кликов через Altcraft Pixel</p>
+        
+        <button id="btn_1" class="btn">Кнопка 1</button>
+        <button id="btn_2" class="btn">Кнопка 2</button>
+        
+        <p><a href="page2.html">Перейти на страницу 2</a></p>
     </div>
-
-    <script>
-    // Отправка события при клике
-    document.getElementById('btn_1').addEventListener('click', function() {
-        acDataLayer.push({
-            event: 'button_click',
-            buttonId: 'btn_1'
-        });
-    });
-    </script>
 </body>
 </html>
